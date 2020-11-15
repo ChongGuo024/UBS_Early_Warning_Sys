@@ -1,10 +1,9 @@
 streamlit==0.71.0
 matplotlib==3.3.3
 streamlit==0.71.0
-pandas
-numpy
-os
-seaborn
+pandas==1.1.4
+numpy==1.19.4
+seaborn=0.11.0
 PIL==2.2.1
-warnings
-plotly
+warnings==3.7.0
+plotly==4.12.0
