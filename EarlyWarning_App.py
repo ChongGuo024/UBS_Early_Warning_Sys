@@ -32,7 +32,7 @@ my_dataset = "temp_11_14_version2.csv"
 # To Improve speed and cache data
 @st.cache(persist=True)
 def explore_data(dataset):
-    df = pd.read_csv('D://Job/UBS竞赛项目/决赛2/temp_11_14_version2.csv')
+    df = pd.read_csv('temp_11_14_version2.csv')
     return df 
 
 # Show Dataset
