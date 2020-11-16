@@ -33,7 +33,7 @@ my_dataset = "temp_11_14_version2.csv"
 # To Improve speed and cache data
 @st.cache(persist=True)
 def explore_data(dataset):
-    df = pd.read_csv('D://Job/UBS竞赛项目/决赛2/temp_11_14_version2.csv')
+    df = pd.read_csv('temp_11_14_version2.csv')
     df = df[['target', 'Company Name', 'Address','County', 'Credit Score Alpha',
        'Employee_Change', 'Estimated Labor Cost', 'Google_Reviews',
        'Google_Scores', 'Grocery_within_Zip', 'NAICS', 
@@ -134,16 +134,6 @@ if st.checkbox("Simple Correlation Plot"):
     st.write(sns.heatmap(corr, center=0,cmap=cmap, linewidths=1,mask=mask,annot=True, fmt=".2f")) 
     st.pyplot()
 
- 
-# # Show Plots
-# if st.checkbox("Simple Correlation Plot with Seaborn "):
-#     data = explore_data(my_dataset)
-#     plt.figure(figsize=(15,10))
-#     st.write(sns.heatmap(data.corr(),vmax=0.9,linewidths=.2,cmap='Set2_r',square=True,annot=True))
-#     # Use Matplotlib to render seaborn
-#     st.pyplot()
-
-
 # Show Plots
 if st.checkbox("Distribution of google scores in every county"):
     data = explore_data(my_dataset)
@@ -160,7 +150,7 @@ if st.checkbox("Estimated Labor Cost of Different Counties"):
 
 
 # Show Plots
-if st.checkbox("# close stores in different counties"):
+if st.checkbox("Number of closed stores in different counties"):
     data = explore_data(my_dataset)
     temp = data[data['target']==0].groupby(by=['County'])['Address'].count().reset_index()
     fig3 = px.bar(temp,x='County',y='Address',labels={'Address':'number of closed stores'})
