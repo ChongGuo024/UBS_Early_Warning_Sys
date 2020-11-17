@@ -33,7 +33,7 @@ my_dataset = "temp_11_14_version3.csv"
 # To Improve speed and cache data
 # @st.cache(persist=True)
 def explore_data(dataset):
-    df = pd.read_csv('D://Job/UBS竞赛项目/决赛2/temp_11_14_version3.csv')
+    df = pd.read_csv('temp_11_14_version3.csv')
     df = df[['target', 'Company Name', 'Address','County', 'Credit Score Alpha',
        'Employee_Change', 'Estimated Labor Cost', 'Google_Reviews',
        'Google_Scores', 'Grocery_within_Zip', 'NAICS', 
